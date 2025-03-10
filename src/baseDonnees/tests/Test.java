@@ -77,14 +77,14 @@ public class Test {
     }
 
 
-    // Méthode main pour exécuter les tests
+
     public static void main(String[] args) {
         Test test = new Test();
 
-        // Test de Colonne
+
         System.out.println(test.testColonne());
 
-        // Test de TableTransactions
+
         System.out.println(test.testTableTransactions());
 
         System.out.println("\n TESTS TERMINÉS !");
