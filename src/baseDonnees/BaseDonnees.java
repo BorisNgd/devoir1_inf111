@@ -26,7 +26,6 @@ public class BaseDonnees {
         this.tableUtilisateurs = new TableUtilisateurs();
         this.tableTransactions = new TableTransactions();
     }
---------------------------------------
 
     /**
      * Ajoute un utilisateur dans la base de données.
