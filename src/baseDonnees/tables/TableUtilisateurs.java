@@ -13,6 +13,9 @@ public class TableUtilisateurs  {
     private Colonne<byte[]> salts;
 
 
+    /**
+     * Ce constructeur initialise les colonnes.
+     */
     public TableUtilisateurs() {
         nomsUtilisateurs = new ColonneIndexee<>();
         numerosDeCompte = new ColonneIndexee<>();
@@ -21,6 +24,12 @@ public class TableUtilisateurs  {
         salts = new Colonne<>();
     }
 
+    /**
+     * Cette méthode ajoute un utilisateur à la base de données, mais seulement si cet utilisateur est
+     * unique
+     * @param utilisateur
+     * @return true si l'utilisateur est ajouté et false si celui-existe déjà
+     */
     public boolean ajouterUtilisateur(Utilisateur utilisateur){
 
         if (!nomsUtilisateurs.estUnique(utilisateur.getNomUtilisateur()) || !numerosDeCompte.estUnique(utilisateur.getNumeroCompte())){
@@ -36,6 +45,11 @@ public class TableUtilisateurs  {
         return  true;
     }
 
+    /**
+     * Cette méthode retrouve un utilisateur à partir de son nom
+     * @param nomUtilisateur
+     * @return Utilisateur || Null
+     */
     public Utilisateur obtenirUtilisateurParNom(String nomUtilisateur){
         try {
             int index = nomsUtilisateurs.obtenirIndex(nomUtilisateur);
@@ -52,6 +66,11 @@ public class TableUtilisateurs  {
         }
     }
 
+    /**
+     * Cette méthode retrouve un utilisateur à partir de son numéro de compte
+     * @param numeroCompte
+     * @return Utilisateur || Exception
+     */
     public Utilisateur obtenirUtilisateurParNumeroDCompte(String numeroCompte){
         try {
             int index = numerosDeCompte.obtenirIndex(numeroCompte);
@@ -68,6 +87,11 @@ public class TableUtilisateurs  {
         }
     }
 
+    /**
+     * Cette méthode retrouve un utilisateur puis change son solde
+     * @param utilisateur
+     * @param solde
+     */
     public void mettreAJourSolde(Utilisateur utilisateur,double solde){
 
         try {

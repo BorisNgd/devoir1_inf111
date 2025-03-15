@@ -12,6 +12,9 @@ public class TableTransactions {
     private Colonne<Double> montants;
     private Colonne<String> statuts;
 
+    /**
+     * Ce constructeur initialise les colonnes.
+     */
     public TableTransactions() {
         this.comptesSources = new Colonne<>();
         this.comptesDestinations = new Colonne<>();
@@ -19,6 +22,10 @@ public class TableTransactions {
         this.statuts = new Colonne<>();
     }
 
+    /**
+     * Cette méthode insère chacun des attributs de la transaction dans la base de données
+     * @param transaction
+     */
     public void ajouterUneTransaction(Transaction transaction) {
         if (transaction == null) {
             throw new IllegalArgumentException("La transaction ne peut pas être null.");
@@ -29,6 +36,11 @@ public class TableTransactions {
         statuts.ajouterValeur(transaction.getStatus());
     }
 
+    /**
+     * Cette méthode récupère toutes les transactions associées avec le numéro de compte
+     * @param numeroDeCompte
+     * @return liste des transactions sur le compte dont le numéro est passé en paramètre
+     */
     public List<Transaction> obtenirTransactionsPourCompte(String numeroDeCompte) {
         if (numeroDeCompte == null) {
             throw new IllegalArgumentException("Le numéro de compte ne peut pas être null.");

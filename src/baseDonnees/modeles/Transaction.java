@@ -1,5 +1,8 @@
 package baseDonnees.modeles;
 
+ /**
+  *  La classe Transaction représente une transaction bancaire entre deux comptes.
+ */
 public class Transaction {
 
     public static String ACCEPTE = "Accepte";
@@ -11,10 +14,18 @@ public class Transaction {
     private double montant;
     private String status;
 
+     /**
+      * Constructeur par défaut pour une transaction.
+      */
     public Transaction(){
-
     }
 
+     /**
+      * Constructeur de la classe Transaction pour créer une transaction avec des informations spécifiques.
+      * @param noCompteSource Le numéro de compte source
+      * @param noCompteDestination Le numéro de compte destination
+      * @param montant Le montant de la transaction
+      */
     public Transaction(String noCompteSource, String noCompteDestination, double montant) {
         this.noCompteSource = noCompteSource;
         this.noCompteDestination = noCompteDestination;
@@ -22,14 +33,20 @@ public class Transaction {
         this.status = A_DETERMINER;
     }
 
+     /**
+      * Constructeur de la classe Transaction permettant de spécifier également le statut de la transaction.
+      *
+      * @param noCompteSource Le numéro de compte source
+      * @param noCompteDestination Le numéro de compte destination
+      * @param montant Le montant de la transaction
+      * @param status Le statut de la transaction (par exemple, "Accepte" ou "Refuse")
+      */
     public Transaction(String noCompteSource, String noCompteDestination, double montant, String status) {
         this.noCompteSource = noCompteSource;
         this.noCompteDestination = noCompteDestination;
         this.montant = montant;
         this.status = status;
     }
-
-
 
     public String getNoCompteSource() {
         return noCompteSource;

@@ -3,6 +3,9 @@ package baseDonnees.modeles;
 import baseDonnees.utils.UtilitairesDB;
 import java.util.Arrays;
 
+/**
+ * La classe Utilisateur représente un utilisateur dans le système bancaire.
+ */
 public class Utilisateur {
 
     private String nomUtilisateur;
@@ -11,6 +14,13 @@ public class Utilisateur {
     private byte[] hashModeDePasse;
     private byte[] salt;
 
+    /**
+     * Constructeur de la classe Utilisateur.
+     * @param nomUtilisateur Le nom d'utilisateur
+     * @param motDePasse Le mot de passe de l'utilisateur
+     * @param numeroDeCompte Le numéro de compte de l'utilisateur
+     * @param solde Le solde initial du compte
+     */
     public Utilisateur(String nomUtilisateur , String motDePasse , String numeroDeCompte , double solde){
         this.nomUtilisateur = nomUtilisateur;
         this.salt = UtilitairesDB.obtenirSalt();
@@ -19,6 +29,14 @@ public class Utilisateur {
         this.solde =  solde;
     }
 
+    /**
+     * Constructeur pour créer un utilisateur à partir de données déjà existantes.
+     * @param nomUtilisateur Le nom d'utilisateur
+     * @param hashModeDePasse Le hash du mot de passe
+     * @param salt Le salt utilisé lors du hachage
+     * @param numeroDeCompte Le numéro de compte
+     * @param solde Le solde du compte
+     */
     public Utilisateur(String nomUtilisateur, byte[] hashModeDePasse, byte[] salt, String numeroDeCompte, double solde) {
         this.nomUtilisateur = nomUtilisateur;
         this.hashModeDePasse = hashModeDePasse;
@@ -27,6 +45,12 @@ public class Utilisateur {
         this.solde = solde;
     }
 
+    /**
+     * Méthode pour authentifier un utilisateur en comparant son nom d'utilisateur et son mot de passe.
+     * @param nomUtilisateur Le nom d'utilisateur saisi
+     * @param motDePasse Le mot de passe saisi
+     * @return true si l'authentification est réussie, false sinon
+     */
     public boolean authentifier(String nomUtilisateur , String motDePasse){
         if(nomUtilisateur.equals(this.nomUtilisateur)){
             byte[] hash =  UtilitairesDB.hashMotDePasse(motDePasse , salt);
@@ -35,6 +59,11 @@ public class Utilisateur {
        return  false;
     }
 
+    /**
+     * Méthode pour effectuer une transaction qui modifie le solde de l'utilisateur.
+     * @param differentiel Le montant à ajouter ou soustraire du solde (valeur négative pour retirer de l'argent)
+     * @return Le nouveau solde après la transaction
+     */
     public double transactionSurSolde(double differentiel){
         solde = solde - differentiel;
         return solde;
@@ -62,6 +91,10 @@ public class Utilisateur {
 
 
 
+    /**
+     * Cette méthode permet de visualiser rapidement les informations d'un utilisateur,
+     * @return Une chaîne de caractères représentant l'utilisateur
+     */
     @Override
     public String toString() {
         return "Utilisateur{" +
