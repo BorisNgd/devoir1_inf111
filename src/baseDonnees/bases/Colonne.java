@@ -1,6 +1,10 @@
 package baseDonnees.bases;
 import  java.util.Arrays;
 
+/**
+ * @author Boris Ngodie Yofang , Kartik Patel
+ * @param <V>
+ */
 public class Colonne<V> implements InterfaceColonne<V> {
 
     private V[] tab;

@@ -5,6 +5,9 @@ import baseDonnees.modeles.Transaction;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Boris Ngodie Yofang
+ */
 public class TableTransactions {
 
     private Colonne<String> comptesSources;

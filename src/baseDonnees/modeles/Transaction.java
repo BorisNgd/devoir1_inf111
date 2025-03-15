@@ -2,6 +2,7 @@ package baseDonnees.modeles;
 
  /**
   *  La classe Transaction représente une transaction bancaire entre deux comptes.
+  *  * @author Boris Ngodie Yofang
  */
 public class Transaction {
 

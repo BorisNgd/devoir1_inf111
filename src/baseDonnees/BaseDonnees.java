@@ -6,6 +6,9 @@ import baseDonnees.modeles.Utilisateur;
 import baseDonnees.modeles.Transaction;
 import java.util.List;
 
+/**
+ * @author Kartik Patel
+ */
 public class BaseDonnees {
 
     private TableUtilisateurs tableUtilisateurs;

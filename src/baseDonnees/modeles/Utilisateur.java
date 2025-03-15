@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 /**
  * La classe Utilisateur représente un utilisateur dans le système bancaire.
+ *  * @author Kartik Patel
  */
 public class Utilisateur {
 

@@ -5,7 +5,9 @@ import baseDonnees.bases.Colonne;
 import baseDonnees.modeles.Transaction;
 
 import java.util.List;
-
+/**
+ * @author Kartik Patel , Boris Ngodie Yofang
+ */
 public class Test {
 
     public String testColonne(){

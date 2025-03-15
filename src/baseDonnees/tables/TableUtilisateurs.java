@@ -3,7 +3,9 @@ package baseDonnees.tables;
 import baseDonnees.bases.Colonne;
 import baseDonnees.bases.ColonneIndexee;
 import baseDonnees.modeles.Utilisateur;
-
+/**
+ * @author Kartik Patel
+ */
 public class TableUtilisateurs  {
 
     private ColonneIndexee<String> nomsUtilisateurs;
